@@ -2,41 +2,58 @@
 
 Get book info from douban.com by using isbn13 or isbn10
 
-## Usage
+## prepare works
 
-1、首先安装go语言：
+1、Firstly, install golang...
 
-	下载最新版本安装包：http://www.golangtc.com/download
+	Download the newest package here: http://www.golangtc.com/download
 
-2、安装完成后go命令就有效了...
+2、Now the go command became available...
 
-3、配置环境变量：`$ vim ~/.bash_profile`
+3、config the path:
 	
-	# GOPATH 是已有的一个目录
+	`$ vim ~/.bash_profile`
+	
+	# GOPATH is an existed content
 	export GOPATH=/Users/.../works
 	export GOBIN=$GOPATH/bin
 	export PATH=$PATH:$GOBIN
 
-4、`$ source ~/.bash_profile`
+	# Remember to source the new file...
+	`$ source ~/.bash_profile`
 
-5、`$ go get github.com/tools/godep`
+4、Get godep
 
-6、git clone https://github.com/insekkei/bookinfo.git
-
-进入bookinfo目录，执行`$ godep  go build`，之后，当前目录下就能看到bookinfo文件了。
+	`$ go get github.com/tools/godep`
 
 ----------------------------------------------------------------------------------
 
-Get book info which isbn13 is `9787508623016` and save the result to `book.json`
+## Usage
+
+Clone the source code(may contains the compiled bookinfo file...)
+
+	$git clone https://github.com/insekkei/bookinfo.git
+
+Get into bookinfo, `$ godep  go build`, then bookinfo appears~~
+
+How to use?
 
 	$ ./bookinfo -i [isbn] -o [filename]
 
-	# 例如：
+`help` is always there...
+
+## Example
+
+Get book info which isbn13 is `9787508623016` and save the result to `book.json`
 
 	$ ./bookinfo -i 9787508623016 -o book.json
 
+## Batch action
+
+	$ sh isbns.sh
 
 # License
+
 Copyright (c) 2014-2015 
 
 Licensed under the Apache License, Version 2.0 (the "License");
