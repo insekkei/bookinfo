@@ -71,11 +71,12 @@ func generate(dirPath string) ([]byte, error) {
 		if err != nil {
 			log.Error(err)
 		}
-
+		book = Book{}
 		err = json.Unmarshal(fileData, &book)
 		if err != nil {
 			log.Error(err)
 		}
+
 		if book.Isbn13 == "" {
 			continue
 		}
