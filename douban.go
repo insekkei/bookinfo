@@ -64,29 +64,35 @@ func generate(dirPath string) ([]byte, error) {
 	var book Book
 	summary := Summary {
 		Name:	"My Libaray",
-		Books:	make([]BookEntry, 0, 10),
+		Books:	[]BookEntry{},
 	}
 	for _, file := range files {
 		fileData, err := ReadFile(file)
 		if err != nil {
 			log.Error(err)
 		}
+
 		err = json.Unmarshal(fileData, &book)
 		if err != nil {
 			log.Error(err)
 		}
-
-		bookentry := BookEntry {
-			Id:			book.Isbn13,
-			Title:		book.Title,
-			Image:		book.Image,
-			Author:		book.Author,
-			Rating:		book.Rating.Average,
-			Publisher:	book.Publisher,
+		if book.Isbn13 == "" {
+			continue
 		}
-		log.Infof("BOOKINFO: %s (%s)", book.Title, book.Isbn13)
-
+		bookentry := BookEntry{}
+		bookentry.Id		= book.Isbn13
+		bookentry.Title		= book.Title
+		bookentry.Image		= book.Image
+		bookentry.Rating	= book.Rating.Average
+		bookentry.Publisher	= book.Publisher
+		for _, name := range book.Author {
+			bookentry.Author = append(bookentry.Author, name)
+		}
 		summary.Books = append(summary.Books, bookentry)
+	}
+
+	for _, b := range summary.Books {
+		log.Infof("%s %s %s", b.Id, b.Title, b.Author)
 	}
 	log.Infof("RESULT: The number of books: %d", len(summary.Books))
 
