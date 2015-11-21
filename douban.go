@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"encoding/json"
 	"io/ioutil"
+	"strings"
 
 	"github.com/codegangsta/cli"
 	log "github.com/Sirupsen/logrus"
@@ -29,6 +30,72 @@ func parseBody(body []byte) ([]byte, error) {
 	var	out bytes.Buffer
 	err := json.Indent(&out, body, "", "\t")
 	return out.Bytes(), err
+}
+
+// Read the file
+func ReadFile(filePath string) ([]byte, error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	return ioutil.ReadAll(f)
+}
+
+// generate the summary json file
+func generate(dirPath string) ([]byte, error) {
+	files := make([]string, 0, 10)
+
+	dir, err := ioutil.ReadDir(dirPath)
+	if err != nil {
+		return nil, err
+	}
+
+	PathSep := string(os.PathSeparator)
+	for _, file := range dir {
+		if file.IsDir() {
+			continue
+		}
+
+		if strings.HasSuffix(strings.ToUpper(file.Name()), "JSON") {
+			files = append(files, dirPath + PathSep + file.Name())
+		}
+	}
+
+	var book Book
+	summary := Summary {
+		Name:	"My Libaray",
+		Books:	make([]BookEntry, 0, 10),
+	}
+	for _, file := range files {
+		fileData, err := ReadFile(file)
+		if err != nil {
+			log.Error(err)
+		}
+		err = json.Unmarshal(fileData, &book)
+		if err != nil {
+			log.Error(err)
+		}
+
+		bookentry := BookEntry {
+			Id:			book.Isbn13,
+			Title:		book.Title,
+			Image:		book.Image,
+			Author:		book.Author,
+			Rating:		book.Rating.Average,
+			Publisher:	book.Publisher,
+		}
+		log.Infof("BOOKINFO: %s (%s)", book.Title, book.Isbn13)
+
+		summary.Books = append(summary.Books, bookentry)
+	}
+	log.Infof("RESULT: The number of books: %d", len(summary.Books))
+
+	res, err := json.Marshal(summary)
+	if err != nil {
+		log.Error(err)
+	}
+
+	return res, err
 }
 
 func getBookInfo(c *cli.Context) {
@@ -67,6 +134,33 @@ func getBookInfo(c *cli.Context) {
 }
 
 
+func generateSummary(c *cli.Context) {
+	dir := c.String("dir")
+	if dir == "" {
+		dir = "books"
+		log.Info("The dir does not set, use the default directory \"books\"")
+	}
+	output := c.String("output")
+	if output == "" {
+		log.Fatal("The output file must be set")
+	}
+
+	body, err := generate(dir)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res, err := parseBody(body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = ioutil.WriteFile(output, res, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 // The MAIN entry
 func main() {
 	app := cli.NewApp()
@@ -75,17 +169,41 @@ func main() {
 	app.Author = "Datawolf"
 	app.Email = "wanglong@laoqinren.net"
 	app.Version = VERSION
-	app.Flags = []cli.Flag{
-		cli.StringFlag{
-			Name:	"isbn, i",
-			Usage:	"the isbn13 of the book",
+	app.Commands = []cli.Command{
+		{
+			Name:		"get",
+			Usage:		"get book data from douban.com",
+			HideHelp:	true,
+			Action:		getBookInfo,
+			Flags:		[]cli.Flag{
+							cli.StringFlag{
+								Name:	"isbn, i",
+								Usage:	"the isbn13 of the book",
+							},
+							cli.StringFlag{
+								Name:	"output, o",
+								Usage:	"file to which to save",
+							},
+			},
 		},
-		cli.StringFlag{
-			Name:	"output, o",
-			Usage:	"file to which to save",
+		{
+			Name:		"generate",
+			Usage:		"generate book summary",
+			HideHelp:	true,
+			Action:		generateSummary,
+			Flags:		[]cli.Flag{
+							cli.StringFlag{
+								Name:	"dir, d",
+								Usage:	"the json file directory",
+							},
+							cli.StringFlag{
+								Name:	"output, o",
+								Usage:	"file to which to save",
+							},
+			},
+
 		},
 	}
-	app.Action = getBookInfo
 
 	app.Run(os.Args)
 }

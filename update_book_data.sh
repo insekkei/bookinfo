@@ -40,12 +40,12 @@ do
 	FILE=${BOOKS_DIR}/${isbn}.json
 	if [ ! -f ${FILE} ]; then
 		echo "Get book data :" $isbn
-		${BOOKINFO} -i ${isbn} -o ${FILE}
+		${BOOKINFO} get -i ${isbn} -o ${FILE}
 	else
 		echo "Book data :" $isbn "already exists"
 	fi
 done < $FILENAME
 
-# TODO:
 # Generate the summary book data 
-# and save it to books/books.json
+# and save it to books.json
+${BOOKINFO} generate -o books.json
