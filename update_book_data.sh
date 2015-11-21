@@ -40,7 +40,7 @@ do
 	FILE=${BOOKS_DIR}/${isbn}.json
 	if [ ! -f ${FILE} ]; then
 		echo "Get book data :" $isbn
-		${BOOKINFO} -i ${isbn} -o ${FILE}
+		${BOOKINFO} get -i ${isbn} -o ${FILE}
 	else
 		echo "Book data :" $isbn "already exists"
 	fi
