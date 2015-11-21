@@ -46,6 +46,6 @@ do
 	fi
 done < $FILENAME
 
-# TODO:
 # Generate the summary book data 
-# and save it to books/books.json
+# and save it to books.json
+${BOOKINFO} generate -o books.json
