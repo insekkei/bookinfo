@@ -90,7 +90,7 @@ func generate(dirPath string) ([]byte, error) {
 	}
 	log.Infof("RESULT: The number of books: %d", len(summary.Books))
 
-	res, err := json.Marshal(summary)
+	res, err := json.Marshal(summary.Books)
 	if err != nil {
 		log.Error(err)
 	}
