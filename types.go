@@ -54,6 +54,8 @@ type	BookEntry struct {
 	Image		string			`json:"image"`
 	Rating		string			`json:"rating"`
 	Publisher	string			`json:"publisher"`
+	Pages		string			`json:"pages"`
+	Price		string			`json:"price"`
 }
 
 type	Summary struct {

@@ -86,6 +86,8 @@ func generate(dirPath string) ([]byte, error) {
 		bookentry.Image		= book.Image
 		bookentry.Rating	= book.Rating.Average
 		bookentry.Publisher	= book.Publisher
+		bookentry.Pages		= book.Pages
+		bookentry.Price		= book.Price
 		for _, name := range book.Author {
 			bookentry.Author = append(bookentry.Author, name)
 		}
