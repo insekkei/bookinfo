@@ -1,6 +1,7 @@
 # bookinfo
 
-Get book info from douban.com by using isbn13 or isbn10
+Get book info from douban.com by using isbn13 or isbn10, It also can generate book summary info and
+save them to file.
 
 ## prepare works
 
@@ -12,7 +13,7 @@ Get book info from douban.com by using isbn13 or isbn10
 
 3、config the path:
 	
-	`$ vim ~/.bash_profile`
+	$ vim ~/.bash_profile
 	
 	# GOPATH is an existed content
 	export GOPATH=/Users/.../works
@@ -20,37 +21,49 @@ Get book info from douban.com by using isbn13 or isbn10
 	export PATH=$PATH:$GOBIN
 
 	# Remember to source the new file...
-	`$ source ~/.bash_profile`
+	$ source ~/.bash_profile
 
 4、Get godep
 
-	`$ go get github.com/tools/godep`
+	$ go get github.com/tools/godep
 
 ----------------------------------------------------------------------------------
 
 ## Usage
 
-Clone the source code(may contains the compiled bookinfo file...)
+Clone the source code
 
-	$git clone https://github.com/insekkei/bookinfo.git
+	$ git clone https://github.com/insekkei/bookinfo.git
 
 Get into bookinfo, `$ godep  go build`, then bookinfo appears~~
 
-How to use?
+###How to use?
 
-	$ ./bookinfo -i [isbn] -o [filename]
+Get book info
+
+	$ ./bookinfo get -i [isbn] -o [filename]
+
+Generate book summary
+
+	# the default dir is books
+	$ ./bookinfo generate -d [dir] -o [filename]
 
 `help` is always there...
 
-## Example
+### Example
 
 Get book info which isbn13 is `9787508623016` and save the result to `book.json`
 
-	$ ./bookinfo -i 9787508623016 -o book.json
+	$ ./bookinfo get -i 9787508623016 -o book.json
+
+Generate book summary info and save the result to `books.json`
+
+	$ ./bookinfo generate -o books.json
 
 ## Batch action
 
-	$ sh isbns.sh
+	$ ./update_book_data.sh
+
 
 # License
 

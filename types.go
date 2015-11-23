@@ -60,5 +60,6 @@ type	BookEntry struct {
 
 type	Summary struct {
 	Name	string			`json:"library"`
+	Total	int				`json:"total"`
 	Books	[]BookEntry		`json:"books"`
 }
