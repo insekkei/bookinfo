@@ -97,6 +97,7 @@ func generate(dirPath string) ([]byte, error) {
 	for _, b := range summary.Books {
 		log.Infof("%s %s %s", b.Id, b.Title, b.Author)
 	}
+	summary.Total = len(summary.Books)
 	log.Infof("RESULT: The number of books: %d", len(summary.Books))
 
 	res, err := json.Marshal(summary.Books)
