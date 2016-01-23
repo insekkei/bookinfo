@@ -8,26 +8,26 @@
 package main
 
 import (
-	"os"
 	"bytes"
-	"fmt"
-	"net/http"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"net/http"
+	"os"
 	"strings"
 
-	"github.com/codegangsta/cli"
 	log "github.com/Sirupsen/logrus"
+	"github.com/codegangsta/cli"
 )
 
 const (
-	URL	= "https://api.douban.com/v2/book/isbn/"
+	URL     = "https://api.douban.com/v2/book/isbn/"
 	VERSION = "v0.0.1"
 )
 
 // This function add Indent to json strings
 func parseBody(body []byte) ([]byte, error) {
-	var	out bytes.Buffer
+	var out bytes.Buffer
 	err := json.Indent(&out, body, "", "\t")
 	return out.Bytes(), err
 }
@@ -57,14 +57,14 @@ func generate(dirPath string) ([]byte, error) {
 		}
 
 		if strings.HasSuffix(strings.ToUpper(file.Name()), "JSON") {
-			files = append(files, dirPath + PathSep + file.Name())
+			files = append(files, dirPath+PathSep+file.Name())
 		}
 	}
 
 	var book Book
-	summary := Summary {
-		Name:	"My Libaray",
-		Books:	[]BookEntry{},
+	summary := Summary{
+		Name:  "My Libaray",
+		Books: []BookEntry{},
 	}
 	for _, file := range files {
 		fileData, err := ReadFile(file)
@@ -81,13 +81,13 @@ func generate(dirPath string) ([]byte, error) {
 			continue
 		}
 		bookentry := BookEntry{}
-		bookentry.Id		= book.Isbn13
-		bookentry.Title		= book.Title
-		bookentry.Image		= book.Image
-		bookentry.Rating	= book.Rating.Average
-		bookentry.Publisher	= book.Publisher
-		bookentry.Pages		= book.Pages
-		bookentry.Price		= book.Price
+		bookentry.Id = book.Isbn13
+		bookentry.Title = book.Title
+		bookentry.Image = book.Image
+		bookentry.Rating = book.Rating.Average
+		bookentry.Publisher = book.Publisher
+		bookentry.Pages = book.Pages
+		bookentry.Price = book.Price
 		for _, name := range book.Author {
 			bookentry.Author = append(bookentry.Author, name)
 		}
@@ -143,7 +143,6 @@ func getBookInfo(c *cli.Context) {
 	}
 }
 
-
 func generateSummary(c *cli.Context) {
 	dir := c.String("dir")
 	if dir == "" {
@@ -181,37 +180,36 @@ func main() {
 	app.Version = VERSION
 	app.Commands = []cli.Command{
 		{
-			Name:		"get",
-			Usage:		"get book data from douban.com",
-			HideHelp:	true,
-			Action:		getBookInfo,
-			Flags:		[]cli.Flag{
-							cli.StringFlag{
-								Name:	"isbn, i",
-								Usage:	"the isbn13 of the book",
-							},
-							cli.StringFlag{
-								Name:	"output, o",
-								Usage:	"file to which to save",
-							},
+			Name:     "get",
+			Usage:    "get book data from douban.com",
+			HideHelp: true,
+			Action:   getBookInfo,
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "isbn, i",
+					Usage: "the isbn13 of the book",
+				},
+				cli.StringFlag{
+					Name:  "output, o",
+					Usage: "file to which to save",
+				},
 			},
 		},
 		{
-			Name:		"generate",
-			Usage:		"generate book summary",
-			HideHelp:	true,
-			Action:		generateSummary,
-			Flags:		[]cli.Flag{
-							cli.StringFlag{
-								Name:	"dir, d",
-								Usage:	"the json file directory",
-							},
-							cli.StringFlag{
-								Name:	"output, o",
-								Usage:	"file to which to save",
-							},
+			Name:     "generate",
+			Usage:    "generate book summary",
+			HideHelp: true,
+			Action:   generateSummary,
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "dir, d",
+					Usage: "the json file directory",
+				},
+				cli.StringFlag{
+					Name:  "output, o",
+					Usage: "file to which to save",
+				},
 			},
-
 		},
 	}
 
