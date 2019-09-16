@@ -115,7 +115,7 @@ func getBookInfo(c *cli.Context) {
 	}
 
 	// The douban url is : https://api.douban.com/v2/book/isbn/:name
-	url := URL + arg
+	url := URL + arg + "?apikey=0df993c66c0c636e29ecbb5344252a4a"
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
