@@ -134,5 +134,5 @@ book={"author":author,"pubdate":pubdate,"image":image, "pages":pages, "isbn13":i
 with io.open(filename, "w", encoding="utf-8") as f:
     print json.dumps(book, indent=4, ensure_ascii=False)
     #f.write(json.dumps(book, indent=4, ensure_ascii=False))
-    f.write(json.dumps(book, ensure_ascii=False))
+    f.write(json.dumps(book, indent=4, ensure_ascii=False))
 

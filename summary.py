@@ -37,4 +37,4 @@ for i in range(0, len(list)):
         books.append(book)
 
 with io.open(filename, "w", encoding="utf-8") as f:
-    f.write(json.dumps(books, ensure_ascii=False))
+    f.write(json.dumps(books, indent=4, ensure_ascii=False))
