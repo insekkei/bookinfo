@@ -1,1 +1,21 @@
-{"pubdate": "2015-5", "tags": ["前端", "Web开发", "前端开发", "计算机", "性能优化", "Web", "软件开发"], "price": "55.00元", "pages": "172", "publisher": "电子工业出版社", "isbn13": "9787121258879", "author": " SteveSouders", "title": "高性能网站建设指南（第二版）", "author_intro": "Steve Souders在Yahoo!担任Chief Performance。他于2000年加盟Yahoo!，在该公司的很多平台和产品团队中工作过。在他到达今天这个位置之前，他就职于My Yahoo!开发团队。.\\n作为Chief Performance Yahoo!，他开发了一系列优秀软件，可以使网站访问速度变得更快。他构建了用于进行性能分析的工具，并将这些优秀软件和工具传播到Yahoo!的各个产品团队中。\\n在到Yahoo!之前，Steve就职于很多小型或中型公司，包括他和别人一起创办的两个公司——Helix Systems和CoolSync。", "summary": "《高性能网站建设指南：前端工程师技能精髓》结合Web 2.0以来Web开发领域的最新形势和特点，介绍了网站性能问题的现状、产生的原因，以及改善或解决性能问题的原则、技术技巧和最佳实践。重点关注网页的行为特征，阐释优化Ajax、CSS、JavaScript、Flash和图片处理等要素的技术，全面涵盖浏览器端性能问题的方方面面。在《高性能网站建设指南：前端工程师技能精髓》中，作者给出了14条具体的优化原则，每一条原则都配以范例佐证，并提供了在线支持。全书内容丰富，主要包括减少HTTP请求、Edge Computing技术、Expires Header技术、gzip组件、CSS和JavaScript最佳实践、主页内联、Domain最小化、JavaScript优化、避免重定向的技巧、删除重复JavaScript的技巧、关闭ETags的技巧、Ajax缓存技术和...\\n(展开全部)\\n《高性能网站建设指南：前端工程师技能精髓》结合Web 2.0以来Web开发领域的最新形势和特点，介绍了网站性能问题的现状、产生的原因，以及改善或解决性能问题的原则、技术技巧和最佳实践。重点关注网页的行为特征，阐释优化Ajax、CSS、JavaScript、Flash和图片处理等要素的技术，全面涵盖浏览器端性能问题的方方面面。在《高性能网站建设指南：前端工程师技能精髓》中，作者给出了14条具体的优化原则，每一条原则都配以范例佐证，并提供了在线支持。全书内容丰富，主要包括减少HTTP请求、Edge Computing技术、Expires Header技术、gzip组件、CSS和JavaScript最佳实践、主页内联、Domain最小化、JavaScript优化、避免重定向的技巧、删除重复JavaScript的技巧、关闭ETags的技巧、Ajax缓存技术和最小化技术等。\\n《高性能网站建设指南：前端工程师技能精髓》适合Web架构师、信息架构师、Web开发人员及产品经理阅读和参考。", "image": "https://img2.doubanio.com/view/subject/m/public/s28094013.jpg"}
+{
+  "pubdate": "2015-5",
+  "tags": [
+    "前端",
+    "Web开发",
+    "前端开发",
+    "计算机",
+    "性能优化",
+    "Web",
+    "软件开发"
+  ],
+  "price": "55.00元",
+  "pages": "172",
+  "publisher": "电子工业出版社",
+  "isbn13": "9787121258879",
+  "author": " SteveSouders",
+  "title": "高性能网站建设指南（第二版）",
+  "author_intro": "Steve Souders在Yahoo!担任Chief Performance。他于2000年加盟Yahoo!，在该公司的很多平台和产品团队中工作过。在他到达今天这个位置之前，他就职于My Yahoo!开发团队。.\\n作为Chief Performance Yahoo!，他开发了一系列优秀软件，可以使网站访问速度变得更快。他构建了用于进行性能分析的工具，并将这些优秀软件和工具传播到Yahoo!的各个产品团队中。\\n在到Yahoo!之前，Steve就职于很多小型或中型公司，包括他和别人一起创办的两个公司——Helix Systems和CoolSync。",
+  "summary": "《高性能网站建设指南：前端工程师技能精髓》结合Web 2.0以来Web开发领域的最新形势和特点，介绍了网站性能问题的现状、产生的原因，以及改善或解决性能问题的原则、技术技巧和最佳实践。重点关注网页的行为特征，阐释优化Ajax、CSS、JavaScript、Flash和图片处理等要素的技术，全面涵盖浏览器端性能问题的方方面面。在《高性能网站建设指南：前端工程师技能精髓》中，作者给出了14条具体的优化原则，每一条原则都配以范例佐证，并提供了在线支持。全书内容丰富，主要包括减少HTTP请求、Edge Computing技术、Expires Header技术、gzip组件、CSS和JavaScript最佳实践、主页内联、Domain最小化、JavaScript优化、避免重定向的技巧、删除重复JavaScript的技巧、关闭ETags的技巧、Ajax缓存技术和...\\n(展开全部)\\n《高性能网站建设指南：前端工程师技能精髓》结合Web 2.0以来Web开发领域的最新形势和特点，介绍了网站性能问题的现状、产生的原因，以及改善或解决性能问题的原则、技术技巧和最佳实践。重点关注网页的行为特征，阐释优化Ajax、CSS、JavaScript、Flash和图片处理等要素的技术，全面涵盖浏览器端性能问题的方方面面。在《高性能网站建设指南：前端工程师技能精髓》中，作者给出了14条具体的优化原则，每一条原则都配以范例佐证，并提供了在线支持。全书内容丰富，主要包括减少HTTP请求、Edge Computing技术、Expires Header技术、gzip组件、CSS和JavaScript最佳实践、主页内联、Domain最小化、JavaScript优化、避免重定向的技巧、删除重复JavaScript的技巧、关闭ETags的技巧、Ajax缓存技术和最小化技术等。\\n《高性能网站建设指南：前端工程师技能精髓》适合Web架构师、信息架构师、Web开发人员及产品经理阅读和参考。",
+  "image": "https://img2.doubanio.com/view/subject/m/public/s28094013.jpg"
+}

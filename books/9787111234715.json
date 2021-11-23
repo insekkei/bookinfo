@@ -1,1 +1,22 @@
-{"pubdate": "2008-2", "tags": ["ruby", "O'Reilly", "编程", "Ruby", "Programming", "计算机", "程序设计", "Rails"], "price": "36.00元", "pages": "260", "publisher": "机械工业出版社", "isbn13": "9787111234715", "author": "Fitzgerald,M", "title": "学习Ruby", "author_intro": "", "summary": "《学习Ruby》都是一本即学即用的实用教材。正如您在开车的时候，并不需要知道关于汽车的一切；当您开始使用Ruby进行编程的时候，也不需要立刻了解关于Ruby的一切。无论对于Ruby的新手还是老手，它提供了非常多的Ruby程序，并且解释了这些程序如何运行以及这样运行的原因。这些内容已经足以让您开始您的Ruby之旅。\\n由于网络开发框架Rubyon Rails的流行和大受欢迎，Ruby已经引起了很多Java和PHP开发人员的兴趣。但除了Rails之外，Ruby还有其他广泛的用途，而学习这些用法的最好方法就是动手尝试编写代码。", "image": "https://img2.doubanio.com/view/subject/m/public/s5885453.jpg"}
+{
+  "pubdate": "2008-2",
+  "tags": [
+    "ruby",
+    "O'Reilly",
+    "编程",
+    "Ruby",
+    "Programming",
+    "计算机",
+    "程序设计",
+    "Rails"
+  ],
+  "price": "36.00元",
+  "pages": "260",
+  "publisher": "机械工业出版社",
+  "isbn13": "9787111234715",
+  "author": "Fitzgerald,M",
+  "title": "学习Ruby",
+  "author_intro": "",
+  "summary": "《学习Ruby》都是一本即学即用的实用教材。正如您在开车的时候，并不需要知道关于汽车的一切；当您开始使用Ruby进行编程的时候，也不需要立刻了解关于Ruby的一切。无论对于Ruby的新手还是老手，它提供了非常多的Ruby程序，并且解释了这些程序如何运行以及这样运行的原因。这些内容已经足以让您开始您的Ruby之旅。\\n由于网络开发框架Rubyon Rails的流行和大受欢迎，Ruby已经引起了很多Java和PHP开发人员的兴趣。但除了Rails之外，Ruby还有其他广泛的用途，而学习这些用法的最好方法就是动手尝试编写代码。",
+  "image": "https://img2.doubanio.com/view/subject/m/public/s5885453.jpg"
+}

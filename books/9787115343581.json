@@ -1,1 +1,22 @@
-{"pubdate": "2014-4-9", "tags": ["JavaScript", "框架", "前端开发", "前端", "javascript", "Web前端开发", "计算机", "编程"], "price": "89.00", "pages": "445", "publisher": "人民邮电出版社", "isbn13": "9787115343581", "author": "司徒正美", "title": "JavaScript框架设计", "author_intro": "钟钦成 网名司徒正美，著名的JavaScript专家，立志做考古学家的日语系工程师，穿梭于二次元与二进制间的“魔法师”，做过陶艺，写过小说，涉猎Java、Ruby、 JavaScript，3年成就此书！", "summary": "《JavaScript框架设计》是一本全面讲解JavaScript框架设计的图书，详细地讲解了设计框架需要具备的知识，主要包括的内容为：框架与库、JavaScript框架分类、JavaScript框架的主要功能、种子模块、模块加载系统、语言模块、浏览器嗅探与特征侦测、样式的支持侦测、类工厂、JavaScript对类的支撑、选择器引擎、浏览器内置的寻找元素的方法、节点模块、一些有趣的元素节点、数据缓存系统、样式模块、个别样式的特殊处理、属性模块、jQuery的属性系统、事件系统、异步处理、JavaScript异步处理的前景、数据交互模块、一个完整的Ajax实现、动画引擎、API的设计、插件化、当前主流MVVM框架介绍、监控数组与子模板等。", "image": "https://img3.doubanio.com/view/subject/m/public/s27256110.jpg"}
+{
+  "pubdate": "2014-4-9",
+  "tags": [
+    "JavaScript",
+    "框架",
+    "前端开发",
+    "前端",
+    "javascript",
+    "Web前端开发",
+    "计算机",
+    "编程"
+  ],
+  "price": "89.00",
+  "pages": "445",
+  "publisher": "人民邮电出版社",
+  "isbn13": "9787115343581",
+  "author": "司徒正美",
+  "title": "JavaScript框架设计",
+  "author_intro": "钟钦成 网名司徒正美，著名的JavaScript专家，立志做考古学家的日语系工程师，穿梭于二次元与二进制间的“魔法师”，做过陶艺，写过小说，涉猎Java、Ruby、 JavaScript，3年成就此书！",
+  "summary": "《JavaScript框架设计》是一本全面讲解JavaScript框架设计的图书，详细地讲解了设计框架需要具备的知识，主要包括的内容为：框架与库、JavaScript框架分类、JavaScript框架的主要功能、种子模块、模块加载系统、语言模块、浏览器嗅探与特征侦测、样式的支持侦测、类工厂、JavaScript对类的支撑、选择器引擎、浏览器内置的寻找元素的方法、节点模块、一些有趣的元素节点、数据缓存系统、样式模块、个别样式的特殊处理、属性模块、jQuery的属性系统、事件系统、异步处理、JavaScript异步处理的前景、数据交互模块、一个完整的Ajax实现、动画引擎、API的设计、插件化、当前主流MVVM框架介绍、监控数组与子模板等。",
+  "image": "https://img3.doubanio.com/view/subject/m/public/s27256110.jpg"
+}
