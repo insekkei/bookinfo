@@ -132,7 +132,6 @@ if tags1:
 book={"author":author,"pubdate":pubdate,"image":image, "pages":pages, "isbn13":isbn13, "title":title,"author_intro":author_intro, "summary":summary, "publisher":publisher, "price":price, "tags": tags_list}
 
 with io.open(filename, "w", encoding="utf-8") as f:
-    print json.dumps(book, indent=4, ensure_ascii=False)
-    #f.write(json.dumps(book, indent=4, ensure_ascii=False))
-    f.write(json.dumps(book, indent=4, ensure_ascii=False))
+    print json.dumps(book, indent=2, ensure_ascii=False)
+    f.write(json.dumps(book, indent=2, ensure_ascii=False))
 
