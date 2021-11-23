@@ -51,7 +51,6 @@ $ ./bookinfo.py  <isbn> <filename>
 
 ```
 $ ./summary.py <dir> <filename>
-
 ```
 ### 示例：
 ```
